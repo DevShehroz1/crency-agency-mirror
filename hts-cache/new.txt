@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+15:53:15	67/67	---M--	200	added ('OK')	text/plain	etag:%220ba1006d602629ba1e65e15c4a9f85df%22	https://crency.agency/robots.txt		(from )
+15:53:16	353016/353016	---MCZ	200	added ('OK')	text/html	etag:W/%225b423a8b6c355d35d43c3f8ce15112b1%22	https://crency.agency/	./crency-agency-mirror/crency.agency/index.html	(from )
