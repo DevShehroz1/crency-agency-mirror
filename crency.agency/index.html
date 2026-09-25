@@ -6,13 +6,11 @@
 
 <head>
 <script>
-// Suppress Next.js client-side navigation errors on mirrored domain
-if (typeof window !== 'undefined') {
-  window.__NEXT_DATA__ = window.__NEXT_DATA__ || {};
-  var _origError = window.onerror;
-  window.addEventListener('error', function(e) { e.preventDefault(); return true; }, true);
-  window.addEventListener('unhandledrejection', function(e) { e.preventDefault(); }, true);
-}
+// Set webpack public path before any chunks load
+__webpack_public_path__ = '/crency.agency/_next/';
+// Suppress Next.js client-side errors on mirrored domain
+window.addEventListener('error', function(e) { e.preventDefault(); return true; }, true);
+window.addEventListener('unhandledrejection', function(e) { e.preventDefault(); }, true);
 </script>
     <meta charSet="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
