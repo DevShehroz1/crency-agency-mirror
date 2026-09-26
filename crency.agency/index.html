@@ -65,59 +65,109 @@ window.addEventListener('unhandledrejection', function(e) { e.preventDefault(); 
     <script src="_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script>
 
 <style id="flux-ventures-brand">
-/* ── Flux Ventures Brand Override ─────────────────────────────────── */
+/* ── Flux Ventures Brand System v2 ────────────────────────────────── */
 
-/* Remap Crency CSS variables to Flux Ventures palette */
+/* CSS variable remapping */
 :root {
-  --_colors---main-violete:       #0038FF;  /* dark purple → electric blue */
-  --_colors---main-light-violet:  #ffffff;  /* lavender → white            */
-  --_colors---main-green:         #CCFF00;  /* neon green → neon lime      */
-  --_colors---pink:               #CCFF00;  /* pink → neon lime            */
-  --_colors---red:                #001A99;  /* red → deep blue             */
-  --_colors---blue:               #0038FF;  /* blue → electric blue        */
-  --_colors---newblue:            #001A99;  /* purple-blue → deep blue     */
-  --_colors---violete:            #001A99;  /* violet → deep blue          */
-  --_colors---green:              #CCFF00;  /* green → neon lime           */
-  --_colors---white:              #ffffff;
+  --_colors---main-violete:      #0038FF;
+  --_colors---main-light-violet: #ffffff;
+  --_colors---main-green:        #CCFF00;
+  --_colors---pink:              #CCFF00;
+  --_colors---red:               #001A99;
+  --_colors---blue:              #0038FF;
+  --_colors---newblue:           #001A99;
+  --_colors---violete:           #001A99;
+  --_colors---green:             #CCFF00;
+  --_colors---white:             #ffffff;
 }
 
-/* Global background with grid */
+/* ── GLOBAL BACKGROUND ──────────────────────────────────────────────── */
 html, body {
   background-color: #0038FF !important;
   background-image:
-    linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px) !important;
+    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px) !important;
   background-size: 40px 40px !important;
 }
+.section.hero { background-color: #0038FF !important; }
 
-/* Hero section */
-.section.hero {
-  background-color: #0038FF !important;
+/* ── HERO HEADLINE ──────────────────────────────────────────────────── */
+/* Thunder Vf spans (main display text) → pure white */
+.title.hero,
+.title.hero .hero-title-additional-font,
+.title.hero .hero-title-additional-font span {
+  color: #FFFFFF !important;
+}
+/* NauryzRedKeds cursive accent letters → neon lime */
+.title.hero .hero-title-main-font {
+  color: #CCFF00 !important;
 }
 
-/* Light sections (about, trust, feedback-form, footer) → glass on blue */
+/* ── HERO ORBITAL LINE ──────────────────────────────────────────────── */
+.draw-path { stroke: #CCFF00 !important; }
+.pen-wrapper .pen path { fill: #CCFF00 !important; }
+
+/* ── HERO DECORATION BADGES ─────────────────────────────────────────── */
+/* Text on lime badges (4.9/5 star, 1h response time) → black */
+.dec-label-text { color: #000000 !important; }
+/* Text on dark badges (post-launch leaf, 9 yrs sausage, hexagon) → white */
+.dec-label-text.white {
+  color: rgba(255,255,255,0.92) !important;
+  opacity: 1 !important;
+}
+/* "Post-launch support" pill: was same blue as background → deep blue glass */
+.hero-dec-leaf {
+  background-color: rgba(0,26,153,0.90) !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
+}
+
+/* ── HERO WAVE TRANSITION (lavender → blue) ─────────────────────────── */
+.hero-wave path { fill: rgba(0,26,153,0.85) !important; }
+
+/* ── MOBILE HERO TITLE ──────────────────────────────────────────────── */
+.hero-a-title { color: #FFFFFF !important; }
+.hero-a-title .additional-font { color: #CCFF00 !important; }
+
+/* ── SECTION BACKGROUNDS ────────────────────────────────────────────── */
 .section.about-us,
 .sticky-section-wrapper.trust,
 .section.trust,
 .section.feedback-form,
 .footer {
-  background-color: rgba(0, 26, 153, 0.55) !important;
+  background-color: rgba(0,26,153,0.55) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
   border-top: 1px solid rgba(255,255,255,0.12) !important;
+}
+.section.services {
+  background-image: linear-gradient(180deg,
+    rgba(0,26,153,0.60) 0%, rgba(0,26,153,0.60) 28.5%,
+    #0038FF 28.5%, #0038FF 100%) !important;
+}
+
+/* ── TYPOGRAPHY ─────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6,
+.cta-title, .trust-title, .footer-title,
+.services-hero-title, .cases-hero-title, .about-outcomes-title {
   color: #ffffff !important;
 }
-
-/* Section transitions (gradient bg) */
-.section.services {
-  background-image: linear-gradient(180deg, rgba(0,26,153,0.6), rgba(0,26,153,0.6) 28.5%, #0038FF 28.5%, #0038FF) !important;
+p { color: rgba(255,255,255,0.88) !important; }
+li { color: rgba(255,255,255,0.88) !important; }
+/* Scoped span rule — does NOT touch hero title spans */
+.section:not(.hero) span:not(.btn-bubble__circle):not(.menu-roll-stack *) {
+  color: rgba(255,255,255,0.88) !important;
 }
 
-/* Cards — glassmorphism */
+/* Cursive accent letters in body sections → neon lime */
+.additional-font, strong.additional-font { color: #CCFF00 !important; }
+/* Exception: lime accent on lime CTA background → deep blue */
+.section.cta .additional-font { color: #001A99 !important; }
+
+.highlighted-text, .dark-span { color: #CCFF00 !important; }
+
+/* ── GLASSMORPHISM CARDS ─────────────────────────────────────────────── */
 .review-card,
 .blog-card,
-.metric-card,
-.about-boards,
 .about-board,
 .pe-card,
 .services-card,
@@ -125,139 +175,142 @@ html, body {
 .about-clarity-box,
 .trust-form,
 .feedback-form .w-form {
-  background: rgba(255,255,255,0.10) !important;
-  border: 1px solid rgba(255,255,255,0.20) !important;
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22) !important;
   color: #ffffff !important;
 }
+.about-boards { background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.18) !important; }
 
-/* Case rows specific */
-.case-row { --row-bg: rgba(255,255,255,0.10) !important; }
-.case-row.blue { --row-bg: rgba(0,56,255,0.30) !important; }
-.case-row.orange { --row-bg: rgba(204,255,0,0.15) !important; }
+.case-row { --row-bg: rgba(255,255,255,0.08) !important; }
+.case-row.blue { --row-bg: rgba(0,56,255,0.28) !important; }
+.case-row.orange { --row-bg: rgba(204,255,0,0.12) !important; }
 
-/* Blog cards */
-.blog-card { --card-bg: rgba(255,255,255,0.10) !important; --card-title: #ffffff !important; }
-.blog-card.web { --card-bg: rgba(204,255,0,0.18) !important; }
-.blog-card.marketing { --card-bg: rgba(0,56,255,0.40) !important; }
+.blog-card { --card-bg: rgba(255,255,255,0.08) !important; --card-title: #ffffff !important; }
+.blog-card.web { --card-bg: rgba(204,255,0,0.12) !important; }
+.blog-card.marketing { --card-bg: rgba(0,26,153,0.50) !important; }
 
-/* Review cards */
-.review-card { --card-bg: rgba(255,255,255,0.10) !important; --card-title: #ffffff !important; }
-.review-card.pink { --card-bg: rgba(204,255,0,0.18) !important; }
+.review-card { --card-bg: rgba(255,255,255,0.08) !important; --card-title: #ffffff !important; }
+.review-card.pink { --card-bg: rgba(204,255,0,0.12) !important; }
 .review-card.violet { --card-bg: rgba(0,26,153,0.60) !important; }
 
-/* Typography — headings white, body on blue rgba white */
-h1, h2, h3, h4, h5, h6,
-.cta-title, .trust-title, .footer-title,
-.services-hero-title, .cases-hero-title,
-.about-outcomes-title {
-  color: #ffffff !important;
+/* ── NAVIGATION ─────────────────────────────────────────────────────── */
+.header-bg path {
+  fill: rgba(255,255,255,0.08) !important;
+  stroke: rgba(255,255,255,0.18) !important;
 }
-p, li, span:not(.menu-roll-line span):not(.btn-bubble__circle) {
-  color: rgba(255,255,255,0.82);
-}
-
-/* Highlighted/keyword text → neon lime */
-.highlighted-text,
-.dark-span,
-.cta-title .additional-font,
-.additional-font {
-  color: #CCFF00 !important;
-}
-
-/* Navigation */
-.header-bg path { fill: rgba(255,255,255,0.08) !important; stroke: rgba(255,255,255,0.18) !important; }
 .nav-link, .nav-link p, .menu-roll-line p,
-.footer-nav-link-block, .footer-nav-link { color: rgba(255,255,255,0.75) !important; }
+.footer-nav-link-block, .footer-nav-link {
+  color: rgba(255,255,255,0.90) !important;
+}
 .nav-link:hover p, .footer-nav-link:hover { color: #CCFF00 !important; }
 
-/* "let's talk" CTA button */
+/* ── PRIMARY CTA BUTTON (lime) ──────────────────────────────────────── */
 .contact-us-button {
   background-color: #CCFF00 !important;
   color: #000000 !important;
   border-radius: 100px !important;
 }
-.contact-us-button p { color: #000000 !important; }
-.contact-us-button .btn-bubble__circle { background-color: #ffffff !important; }
+.contact-us-button p,
+.contact-us-button > * { color: #000000 !important; }
+.contact-us-button .btn-bubble__circle { background-color: rgba(255,255,255,0.80) !important; }
 
-/* Service card buttons */
-.services-card-button.green { color: #000000 !important; background-color: #CCFF00 !important; }
-.services-card-button.pink  { color: #000000 !important; background-color: #CCFF00 !important; }
-.services-card-button.orange { color: #000000 !important; background-color: #CCFF00 !important; }
+/* ── SECONDARY GLASS BUTTONS (Open Menu, View Cases) ────────────────── */
+.fixed-menu-button {
+  background-color: rgba(0,26,153,0.85) !important;
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+.fixed-menu-button .common-text,
+.fixed-menu-button .bold-text,
+.fixed-menu-button .menu-roll-line { color: rgba(255,255,255,0.90) !important; }
+
+/* ── SERVICE CARD BUTTONS ────────────────────────────────────────────── */
+.services-card-button.green,
+.services-card-button.pink,
+.services-card-button.orange {
+  color: #000000 !important;
+  background-color: #CCFF00 !important;
+}
 .services-card-button .btn-bubble__circle { background-color: #001A99 !important; }
 
-/* CTA section */
+/* ── CTA SECTION (lime background) ──────────────────────────────────── */
 .section.cta { background-color: #CCFF00 !important; }
 .section.cta .cta-title,
 .section.cta h2 { color: #000000 !important; }
-.section.cta p { color: rgba(0,0,0,0.70) !important; }
+.section.cta p { color: rgba(0,0,0,0.72) !important; }
 .cta-button-text { background-color: #0038FF !important; color: #ffffff !important; }
 
-/* Metric cards inside CTA */
-.metric-card { background: rgba(0,0,0,0.12) !important; border: 1px solid rgba(0,0,0,0.15) !important; }
+/* Metric cards (inside CTA) */
+.metric-card { background: rgba(0,0,0,0.10) !important; border: 1px solid rgba(0,0,0,0.15) !important; }
 .metric-card-text { color: #000000 !important; }
 
-/* Scrollbar */
+/* ── SCROLLBAR ───────────────────────────────────────────────────────── */
 .os-scrollbar-handle,
 .os-scrollbar-handle:hover { background-color: #CCFF00 !important; }
 
-/* Discuss / modal */
+/* ── DISCUSS MODAL ───────────────────────────────────────────────────── */
 .discuss-wrapper { background-color: #0038FF !important; }
-.discuss-input { background-color: rgba(255,255,255,0.12) !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.25) !important; }
+.discuss-input {
+  background-color: rgba(255,255,255,0.10) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+  border-radius: 8px !important;
+}
 .discuss-input::placeholder { color: rgba(255,255,255,0.40) !important; }
 .discuss-submit.btn-bubble { background-color: #CCFF00 !important; color: #000000 !important; }
 .discuss-submit .btn-bubble__circle { background-color: #001A99 !important; }
 
-/* Arrow icons */
+/* ── ARROW ICONS ─────────────────────────────────────────────────────── */
 .arrow-icon { background-color: #CCFF00 !important; }
 .arrow-icon path, .arrow-icon svg path { fill: #000000 !important; }
-.arrow-icon.invert { background-color: rgba(255,255,255,0.15) !important; }
+.arrow-icon.invert { background-color: rgba(255,255,255,0.12) !important; }
 
-/* Bottom hero pill nav */
-.fixed-menu-button { background-color: rgba(0,26,153,0.85) !important; border: 1px solid rgba(255,255,255,0.15) !important; backdrop-filter: blur(16px) !important; }
-.fixed-menu-button .common-text { color: #ffffff !important; }
-
-/* Footer row (scrolling text) */
+/* ── FOOTER MARQUEE ROW ──────────────────────────────────────────────── */
 .row-wrapper.purple { background-color: #CCFF00 !important; }
 .row.purple { background-color: #CCFF00 !important; }
 .row-text { color: #000000 !important; }
 .orange-icon path { fill: #0038FF !important; }
 
-/* Services viewport phone */
+/* ── SERVICES ────────────────────────────────────────────────────────── */
 .services-viewport.phone { background-color: #001A99 !important; }
-
-/* Trust form */
-.trust-form-options, .trust-form { background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.15) !important; border-radius: 16px !important; }
-.trust-check-box { border-color: rgba(255,255,255,0.30) !important; background-color: rgba(255,255,255,0.05) !important; }
-
-/* About clarity box */
-.about-clarity-box { background-color: rgba(204,255,0,0.15) !important; }
-
-/* Cursor block */
-.cursor-block, .cursor-text-block { background-color: rgba(0,26,153,0.90) !important; border: 1px solid rgba(255,255,255,0.20) !important; }
-.cursor-text-block.pointer { border-color: #CCFF00 !important; }
-.cursor-text-block.drag { background-color: #0038FF !important; }
-
-/* Service slides on mobile */
 .service-slide { background-color: rgba(0,26,153,0.80) !important; }
 .service-slide.second { background-color: rgba(0,26,153,0.90) !important; }
 .service-slide.third { background-color: #001A99 !important; }
 .service-slide.third .service-button-text { color: #CCFF00 !important; }
 .service-slide.third .arrow-icon { background-color: #CCFF00 !important; }
-
-/* Process line dots */
 .service-process-num { color: #CCFF00 !important; }
 .service-process-dot::before { border-color: #CCFF00 !important; }
 
-/* Header menu button dots */
-.header-menu-button i { background: #CCFF00 !important; box-shadow: 0 0 0 3.5rem #0038FF !important; }
+/* ── TRUST FORM ──────────────────────────────────────────────────────── */
+.trust-form-options, .trust-form {
+  background: rgba(255,255,255,0.08) !important;
+  border: 1px solid rgba(255,255,255,0.15) !important;
+  border-radius: 16px !important;
+}
+.trust-check-box {
+  border-color: rgba(255,255,255,0.30) !important;
+  background-color: rgba(255,255,255,0.05) !important;
+}
 
-/* Hero decorative line (bezier path) stays neon lime — no change needed */
+/* ── ABOUT SECTION ───────────────────────────────────────────────────── */
+.about-clarity-box { background-color: rgba(204,255,0,0.12) !important; }
 
-/* Subtle box-shadows for glass elements */
-.review-card, .blog-card, .about-board {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.20) !important;
+/* ── CURSOR ──────────────────────────────────────────────────────────── */
+.cursor-block, .cursor-text-block {
+  background-color: rgba(0,26,153,0.90) !important;
+  border: 1px solid rgba(255,255,255,0.20) !important;
+}
+.cursor-text-block.pointer { border-color: #CCFF00 !important; }
+.cursor-text-block.drag { background-color: #0038FF !important; }
+
+/* ── HAMBURGER DOTS ──────────────────────────────────────────────────── */
+.header-menu-button i {
+  background: #CCFF00 !important;
+  box-shadow: 0 0 0 3.5rem #0038FF !important;
 }
 </style>
 </head>
