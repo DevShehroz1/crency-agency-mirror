@@ -2405,6 +2405,54 @@ li { color: rgba(255,255,255,0.88) !important; }
     <script>self.__next_f.push([1, "81:I[622,[],\"IconMark\"]\n"])</script>
     <script>self.__next_f.push([1, "67:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Crency: Design \u0026 Web Development That Sells\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Websites people believe in — and buy from. Crency is a design and development agency: strategy, Webflow build and launch in three weeks. See the work.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"canonical\",\"href\":\"https://crency.agency\"}],[\"$\",\"meta\",\"3\",{\"property\":\"og:title\",\"content\":\"Crency: Design \u0026 Web Development That Sells\"}],[\"$\",\"meta\",\"4\",{\"property\":\"og:description\",\"content\":\"Websites people believe in — and buy from. Crency is a design and development agency: strategy, Webflow build and launch in three weeks. See the work.\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:url\",\"content\":\"https://crency.agency\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:site_name\",\"content\":\"Crency\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:locale\",\"content\":\"en_US\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:image:type\",\"content\":\"image/png\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image\",\"content\":\"https://crency.agency/opengraph-image.png?d06f51a44cb02a11\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"14\",{\"name\":\"twitter:title\",\"content\":\"Crency: Design \u0026 Web Development That Sells\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:description\",\"content\":\"Websites people believe in — and buy from. Crency is a design and development agency: strategy, Webflow build and launch in three weeks. See the work.\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:image:type\",\"content\":\"image/png\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"19\",{\"name\":\"twitter:image\",\"content\":\"https://crency.agency/twitter-image.png?d06f51a44cb02a11\"}],[\"$\",\"link\",\"20\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}],[\"$\",\"link\",\"21\",{\"rel\":\"icon\",\"href\":\"/icon-192.png\",\"type\":\"image/png\",\"sizes\":\"192x192\"}],[\"$\",\"link\",\"22\",{\"rel\":\"apple-touch-icon\",\"href\":\"/icon-192.png\",\"sizes\":\"192x192\"}],[\"$\",\"$L81\",\"23\",{}]],\"error\":null,\"digest\":\"$undefined\"}\n"])</script>
     <script>self.__next_f.push([1, "2d:\"$67:metadata\"\n"])</script>
+<script>
+/* Flux Ventures logo injection — runs after React hydration overwrites the static logo */
+(function() {
+  var NS = 'http://www.w3.org/2000/svg';
+
+  function buildLogoSVG() {
+    var svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('width', '200'); svg.setAttribute('height', '32');
+    svg.setAttribute('viewBox', '0 0 500 76');
+    svg.setAttribute('fill', 'none'); svg.setAttribute('style', 'display:block');
+    svg.setAttribute('aria-label', 'Flux Ventures');
+
+    var p1 = document.createElementNS(NS, 'polygon');
+    p1.setAttribute('points', '2,4 70,4 64,26 0,26'); p1.setAttribute('fill', '#CCFF00');
+
+    var p2 = document.createElementNS(NS, 'polygon');
+    p2.setAttribute('points', '0,32 27,32 23,72 0,66'); p2.setAttribute('fill', '#CCFF00');
+
+    var t1 = document.createElementNS(NS, 'text');
+    t1.setAttribute('x', '84'); t1.setAttribute('y', '57');
+    t1.setAttribute('font-family', "'Arial Black',Arial,sans-serif");
+    t1.setAttribute('font-weight', '900'); t1.setAttribute('font-size', '50');
+    t1.setAttribute('fill', '#FFFFFF'); t1.textContent = 'Flux';
+
+    var t2 = document.createElementNS(NS, 'text');
+    t2.setAttribute('x', '210'); t2.setAttribute('y', '57');
+    t2.setAttribute('font-family', "'Arial Black',Arial,sans-serif");
+    t2.setAttribute('font-weight', '900'); t2.setAttribute('font-size', '50');
+    t2.setAttribute('fill', '#CCFF00'); t2.textContent = 'Ventures';
+
+    svg.appendChild(p1); svg.appendChild(p2); svg.appendChild(t1); svg.appendChild(t2);
+    return svg;
+  }
+
+  function replaceLogo() {
+    document.querySelectorAll('.header-logo').forEach(function(el) {
+      if (el.tagName === 'IMG') el.parentNode.replaceChild(buildLogoSVG(), el);
+    });
+  }
+
+  /* Run immediately, then watch for React replacing it */
+  replaceLogo();
+  var obs = new MutationObserver(replaceLogo);
+  obs.observe(document.body, { childList: true, subtree: true });
+  /* Disconnect after hydration window (~2s) */
+  setTimeout(function() { obs.disconnect(); }, 2000);
+})();
+</script>
 </body>
 <!-- Mirrored from crency.agency/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Sep 2026 10:53:16 GMT -->
 
