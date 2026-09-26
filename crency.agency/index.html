@@ -122,23 +122,22 @@ html, body {
 }
 /* Star badge text overrides the .white class → stays black on lime */
 .hero-dec-star-wrap .dec-label-text.white { color: #0a0a0a !important; }
-/* Logo: absolutely position inside nav pill so it doesn't affect flex layout */
+/* Logo: fixed-width flex item so it participates in normal flex flow */
 img.header-logo { display: none !important; }
 a.logo-link {
-  position: absolute !important;
-  left: 16px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  width: 260px !important;
-  height: 52px !important;
-  display: block !important;
-  z-index: 2 !important;
+  flex: 0 0 240px !important;
+  width: 240px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
 }
 a.logo-link::before {
   content: '';
   display: block;
-  width: 260px;
-  height: 52px;
+  width: 240px;
+  height: 48px;
   background: url('https://cdn.shopify.com/s/files/1/0753/3936/6623/files/ChatGPT_Image_Sep_26_2026_01_56_54_PM.png?v=1790414646') no-repeat left center / contain;
 }
 /* "Post-launch support" pill: was same blue as background → deep blue glass */
@@ -349,12 +348,10 @@ li { color: rgba(255,255,255,0.88) !important; }
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
   border-radius: 100px !important;
-  position: relative !important;
   justify-content: flex-start !important;
   align-items: center !important;
-  padding-top: 16px !important;
-  padding-bottom: 16px !important;
-  padding-left: 300px !important;
+  gap: 32px !important;
+  padding: 14px 28px !important;
   min-height: 68px !important;
 }
 /* Nav items: title-case */
