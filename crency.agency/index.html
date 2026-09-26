@@ -122,8 +122,21 @@ html, body {
 }
 /* Star badge text overrides the .white class → stays black on lime */
 .hero-dec-star-wrap .dec-label-text.white { color: #0a0a0a !important; }
-/* Hide logo entirely */
-a.logo-link { display: none !important; }
+/* Logo: hide React-hydrated img, show CDN PNG via pseudo-element */
+img.header-logo { display: none !important; }
+a.logo-link {
+  display: block !important;
+  width: 220px !important;
+  height: 44px !important;
+  flex-shrink: 0 !important;
+}
+a.logo-link::before {
+  content: '';
+  display: block;
+  width: 220px;
+  height: 44px;
+  background: url('https://cdn.shopify.com/s/files/1/0753/3936/6623/files/ChatGPT_Image_Sep_26_2026_01_56_54_PM.png?v=1790414646') no-repeat left center / contain;
+}
 /* "Post-launch support" pill: was same blue as background → deep blue glass */
 .hero-dec-leaf {
   background-color: rgba(0,26,153,0.90) !important;
