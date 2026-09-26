@@ -1,9 +1,1 @@
-{
-  "redirects": [
-    { "source": "/about-us", "destination": "https://crency.agency/about-us", "permanent": false },
-    { "source": "/cases", "destination": "https://crency.agency/cases", "permanent": false },
-    { "source": "/services", "destination": "https://crency.agency/services", "permanent": false },
-    { "source": "/blog", "destination": "https://crency.agency/blog", "permanent": false },
-    { "source": "/contact-us", "destination": "https://crency.agency/contact-us", "permanent": false }
-  ]
-}
+{}
