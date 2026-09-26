@@ -59,8 +59,8 @@ window.addEventListener('unhandledrejection', function(e) { e.preventDefault(); 
     <meta name="twitter:image:width" content="1200" />
     <meta name="twitter:image:height" content="630" />
     <meta name="twitter:image" content="https://crency.agency/twitter-image.png?d06f51a44cb02a11" />
-    <link rel="icon" href="https://cdn.shopify.com/s/files/1/0753/3936/6623/files/ChatGPT_Image_Sep_26_2026_02_24_17_PM.png?v=1790414773" type="image/png" sizes="32x32" />
-    <link rel="shortcut icon" href="https://cdn.shopify.com/s/files/1/0753/3936/6623/files/ChatGPT_Image_Sep_26_2026_02_24_17_PM.png?v=1790414773" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="shortcut icon" href="/favicon.png" />
     <link rel="apple-touch-icon" href="https://crency.agency/icon-192.png" sizes="192x192" />
     <script src="_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script>
 
@@ -350,8 +350,12 @@ li { color: rgba(255,255,255,0.88) !important; }
   -webkit-backdrop-filter: blur(24px) !important;
   border-radius: 100px !important;
   position: relative !important;
-  justify-content: center !important;
-  padding-left: 100px !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  padding-left: 300px !important;
+  min-height: 68px !important;
 }
 /* Nav items: title-case */
 .header-nav-block .nav-link .menu-roll-line p,
