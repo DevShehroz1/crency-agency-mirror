@@ -1,5 +1,5 @@
 <!DOCTYPE html><!--EyQgWVrrrKX4rZaE8Yf3D-->
-<html lang="en" style="background-color:#150734">
+<html lang="en" style="background-color:#0038FF">
 <!-- Mirrored from crency.agency/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Sep 2026 10:53:16 GMT -->
 <!-- Added by HTTrack -->
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
@@ -63,6 +63,203 @@ window.addEventListener('unhandledrejection', function(e) { e.preventDefault(); 
     <link rel="icon" href="https://crency.agency/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="apple-touch-icon" href="https://crency.agency/icon-192.png" sizes="192x192" />
     <script src="_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script>
+
+<style id="flux-ventures-brand">
+/* ── Flux Ventures Brand Override ─────────────────────────────────── */
+
+/* Remap Crency CSS variables to Flux Ventures palette */
+:root {
+  --_colors---main-violete:       #0038FF;  /* dark purple → electric blue */
+  --_colors---main-light-violet:  #ffffff;  /* lavender → white            */
+  --_colors---main-green:         #CCFF00;  /* neon green → neon lime      */
+  --_colors---pink:               #CCFF00;  /* pink → neon lime            */
+  --_colors---red:                #001A99;  /* red → deep blue             */
+  --_colors---blue:               #0038FF;  /* blue → electric blue        */
+  --_colors---newblue:            #001A99;  /* purple-blue → deep blue     */
+  --_colors---violete:            #001A99;  /* violet → deep blue          */
+  --_colors---green:              #CCFF00;  /* green → neon lime           */
+  --_colors---white:              #ffffff;
+}
+
+/* Global background with grid */
+html, body {
+  background-color: #0038FF !important;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px) !important;
+  background-size: 40px 40px !important;
+}
+
+/* Hero section */
+.section.hero {
+  background-color: #0038FF !important;
+}
+
+/* Light sections (about, trust, feedback-form, footer) → glass on blue */
+.section.about-us,
+.sticky-section-wrapper.trust,
+.section.trust,
+.section.feedback-form,
+.footer {
+  background-color: rgba(0, 26, 153, 0.55) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-top: 1px solid rgba(255,255,255,0.12) !important;
+  color: #ffffff !important;
+}
+
+/* Section transitions (gradient bg) */
+.section.services {
+  background-image: linear-gradient(180deg, rgba(0,26,153,0.6), rgba(0,26,153,0.6) 28.5%, #0038FF 28.5%, #0038FF) !important;
+}
+
+/* Cards — glassmorphism */
+.review-card,
+.blog-card,
+.metric-card,
+.about-boards,
+.about-board,
+.pe-card,
+.services-card,
+.case-row,
+.about-clarity-box,
+.trust-form,
+.feedback-form .w-form {
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid rgba(255,255,255,0.20) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  color: #ffffff !important;
+}
+
+/* Case rows specific */
+.case-row { --row-bg: rgba(255,255,255,0.10) !important; }
+.case-row.blue { --row-bg: rgba(0,56,255,0.30) !important; }
+.case-row.orange { --row-bg: rgba(204,255,0,0.15) !important; }
+
+/* Blog cards */
+.blog-card { --card-bg: rgba(255,255,255,0.10) !important; --card-title: #ffffff !important; }
+.blog-card.web { --card-bg: rgba(204,255,0,0.18) !important; }
+.blog-card.marketing { --card-bg: rgba(0,56,255,0.40) !important; }
+
+/* Review cards */
+.review-card { --card-bg: rgba(255,255,255,0.10) !important; --card-title: #ffffff !important; }
+.review-card.pink { --card-bg: rgba(204,255,0,0.18) !important; }
+.review-card.violet { --card-bg: rgba(0,26,153,0.60) !important; }
+
+/* Typography — headings white, body on blue rgba white */
+h1, h2, h3, h4, h5, h6,
+.cta-title, .trust-title, .footer-title,
+.services-hero-title, .cases-hero-title,
+.about-outcomes-title {
+  color: #ffffff !important;
+}
+p, li, span:not(.menu-roll-line span):not(.btn-bubble__circle) {
+  color: rgba(255,255,255,0.82);
+}
+
+/* Highlighted/keyword text → neon lime */
+.highlighted-text,
+.dark-span,
+.cta-title .additional-font,
+.additional-font {
+  color: #CCFF00 !important;
+}
+
+/* Navigation */
+.header-bg path { fill: rgba(255,255,255,0.08) !important; stroke: rgba(255,255,255,0.18) !important; }
+.nav-link, .nav-link p, .menu-roll-line p,
+.footer-nav-link-block, .footer-nav-link { color: rgba(255,255,255,0.75) !important; }
+.nav-link:hover p, .footer-nav-link:hover { color: #CCFF00 !important; }
+
+/* "let's talk" CTA button */
+.contact-us-button {
+  background-color: #CCFF00 !important;
+  color: #000000 !important;
+  border-radius: 100px !important;
+}
+.contact-us-button p { color: #000000 !important; }
+.contact-us-button .btn-bubble__circle { background-color: #ffffff !important; }
+
+/* Service card buttons */
+.services-card-button.green { color: #000000 !important; background-color: #CCFF00 !important; }
+.services-card-button.pink  { color: #000000 !important; background-color: #CCFF00 !important; }
+.services-card-button.orange { color: #000000 !important; background-color: #CCFF00 !important; }
+.services-card-button .btn-bubble__circle { background-color: #001A99 !important; }
+
+/* CTA section */
+.section.cta { background-color: #CCFF00 !important; }
+.section.cta .cta-title,
+.section.cta h2 { color: #000000 !important; }
+.section.cta p { color: rgba(0,0,0,0.70) !important; }
+.cta-button-text { background-color: #0038FF !important; color: #ffffff !important; }
+
+/* Metric cards inside CTA */
+.metric-card { background: rgba(0,0,0,0.12) !important; border: 1px solid rgba(0,0,0,0.15) !important; }
+.metric-card-text { color: #000000 !important; }
+
+/* Scrollbar */
+.os-scrollbar-handle,
+.os-scrollbar-handle:hover { background-color: #CCFF00 !important; }
+
+/* Discuss / modal */
+.discuss-wrapper { background-color: #0038FF !important; }
+.discuss-input { background-color: rgba(255,255,255,0.12) !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.25) !important; }
+.discuss-input::placeholder { color: rgba(255,255,255,0.40) !important; }
+.discuss-submit.btn-bubble { background-color: #CCFF00 !important; color: #000000 !important; }
+.discuss-submit .btn-bubble__circle { background-color: #001A99 !important; }
+
+/* Arrow icons */
+.arrow-icon { background-color: #CCFF00 !important; }
+.arrow-icon path, .arrow-icon svg path { fill: #000000 !important; }
+.arrow-icon.invert { background-color: rgba(255,255,255,0.15) !important; }
+
+/* Bottom hero pill nav */
+.fixed-menu-button { background-color: rgba(0,26,153,0.85) !important; border: 1px solid rgba(255,255,255,0.15) !important; backdrop-filter: blur(16px) !important; }
+.fixed-menu-button .common-text { color: #ffffff !important; }
+
+/* Footer row (scrolling text) */
+.row-wrapper.purple { background-color: #CCFF00 !important; }
+.row.purple { background-color: #CCFF00 !important; }
+.row-text { color: #000000 !important; }
+.orange-icon path { fill: #0038FF !important; }
+
+/* Services viewport phone */
+.services-viewport.phone { background-color: #001A99 !important; }
+
+/* Trust form */
+.trust-form-options, .trust-form { background: rgba(255,255,255,0.08) !important; border: 1px solid rgba(255,255,255,0.15) !important; border-radius: 16px !important; }
+.trust-check-box { border-color: rgba(255,255,255,0.30) !important; background-color: rgba(255,255,255,0.05) !important; }
+
+/* About clarity box */
+.about-clarity-box { background-color: rgba(204,255,0,0.15) !important; }
+
+/* Cursor block */
+.cursor-block, .cursor-text-block { background-color: rgba(0,26,153,0.90) !important; border: 1px solid rgba(255,255,255,0.20) !important; }
+.cursor-text-block.pointer { border-color: #CCFF00 !important; }
+.cursor-text-block.drag { background-color: #0038FF !important; }
+
+/* Service slides on mobile */
+.service-slide { background-color: rgba(0,26,153,0.80) !important; }
+.service-slide.second { background-color: rgba(0,26,153,0.90) !important; }
+.service-slide.third { background-color: #001A99 !important; }
+.service-slide.third .service-button-text { color: #CCFF00 !important; }
+.service-slide.third .arrow-icon { background-color: #CCFF00 !important; }
+
+/* Process line dots */
+.service-process-num { color: #CCFF00 !important; }
+.service-process-dot::before { border-color: #CCFF00 !important; }
+
+/* Header menu button dots */
+.header-menu-button i { background: #CCFF00 !important; box-shadow: 0 0 0 3.5rem #0038FF !important; }
+
+/* Hero decorative line (bezier path) stays neon lime — no change needed */
+
+/* Subtle box-shadows for glass elements */
+.review-card, .blog-card, .about-board {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.20) !important;
+}
+</style>
 </head>
 
 <body class="body">
@@ -77,8 +274,13 @@ window.addEventListener('unhandledrejection', function(e) { e.preventDefault(); 
     <header data-wf--header--variant="home-page" class="section header">
         <div class="w-layout-blockcontainer container header w-container">
             <nav data-hero-dec="0.5" class="header-nav"><a href="index.html" aria-current="page"
-                    class="logo-link w-inline-block w--current"><img src="https://crency.agency/wf/logo-crn.svg"
-                        loading="lazy" width="76" height="31" alt="Crency home" class="header-logo" /></a>
+                    class="logo-link w-inline-block w--current"><svg width="160" height="32" viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Flux Ventures" style="display:block">
+  <path d="M6,54 L22,14 L32,14 L16,54 Z" fill="#CCFF00"/>
+  <path d="M22,14 L46,14 L40,28 L16,28 Z" fill="#CCFF00"/>
+  <path d="M16,34 L38,34 L32,48 L10,48 Z" fill="#CCFF00"/>
+  <text x="56" y="48" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="40" fill="white" letter-spacing="-1">Flux</text>
+  <text x="148" y="48" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="40" fill="#CCFF00" letter-spacing="-1">Ventures</text>
+</svg></a>
                 <ul role="list" class="header-nav-block w-list-unstyled">
                     <li class="nav-link-block"><a href="https://crency.agency/about-us"
                             class="nav-link w-inline-block"><span class="menu-roll"><span class="menu-roll-stack"><span
