@@ -310,7 +310,26 @@ li { color: rgba(255,255,255,0.88) !important; }
 /* ── HAMBURGER DOTS ──────────────────────────────────────────────────── */
 .header-menu-button i {
   background: #CCFF00 !important;
-  box-shadow: 0 0 0 3.5rem #0038FF !important;
+  box-shadow: 0 0 0 3.5rem rgba(0,56,255,0) !important;
+}
+
+/* ── HEADER GLASSMORPHISM (100px pill) ───────────────────────────────── */
+/* Hide the polygon SVG — CSS takes over the background */
+.header-bg { display: none !important; }
+
+.header-nav {
+  background: rgba(255,255,255,0.10) !important;
+  border: 1px solid rgba(255,255,255,0.22) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-radius: 100px !important;
+  padding-left: 16rem !important;
+  padding-right: 24rem !important;
+}
+
+/* Keep section header itself transparent — glass pill floats over hero */
+.section.header {
+  background: transparent !important;
 }
 </style>
 </head>
@@ -327,12 +346,15 @@ li { color: rgba(255,255,255,0.88) !important; }
     <header data-wf--header--variant="home-page" class="section header">
         <div class="w-layout-blockcontainer container header w-container">
             <nav data-hero-dec="0.5" class="header-nav"><a href="index.html" aria-current="page"
-                    class="logo-link w-inline-block w--current"><svg width="160" height="32" viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Flux Ventures" style="display:block">
-  <path d="M6,54 L22,14 L32,14 L16,54 Z" fill="#CCFF00"/>
-  <path d="M22,14 L46,14 L40,28 L16,28 Z" fill="#CCFF00"/>
-  <path d="M16,34 L38,34 L32,48 L10,48 Z" fill="#CCFF00"/>
-  <text x="56" y="48" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="40" fill="white" letter-spacing="-1">Flux</text>
-  <text x="148" y="48" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-size="40" fill="#CCFF00" letter-spacing="-1">Ventures</text>
+                    class="logo-link w-inline-block w--current"><svg width="220" height="34" viewBox="0 0 500 76" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Flux Ventures" style="display:block">
+  <!-- F-mark: upper wide parallelogram bar -->
+  <polygon points="2,4 70,4 64,26 0,26" fill="#CCFF00"/>
+  <!-- F-mark: lower narrow stem -->
+  <polygon points="0,32 27,32 23,72 0,66" fill="#CCFF00"/>
+  <!-- Flux — white -->
+  <text x="84" y="57" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="50" fill="#FFFFFF">Flux</text>
+  <!-- Ventures — neon lime -->
+  <text x="210" y="57" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="50" fill="#CCFF00">Ventures</text>
 </svg></a>
                 <ul role="list" class="header-nav-block w-list-unstyled">
                     <li class="nav-link-block"><a href="https://crency.agency/about-us"
