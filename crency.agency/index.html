@@ -85,11 +85,12 @@ window.addEventListener('unhandledrejection', function(e) { e.preventDefault(); 
 html, body {
   background-color: #0038FF !important;
   background-image:
-    linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px) !important;
-  background-size: 40px 40px !important;
+    linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px) !important;
+  background-size: 90px 90px !important;
+  background-attachment: fixed !important;
 }
-.section.hero { background-color: #0038FF !important; }
+.section.hero { background-color: transparent !important; }
 
 /* ── HERO HEADLINE ──────────────────────────────────────────────────── */
 /* Thunder Vf spans (main display text) → pure white */
@@ -108,12 +109,20 @@ html, body {
 .pen-wrapper .pen path { fill: #CCFF00 !important; }
 
 /* ── HERO DECORATION BADGES ─────────────────────────────────────────── */
-/* Text on lime badges (4.9/5 star, 1h response time) → black */
+/* 4.9/5 starburst → black */
+.hero-dec-star path { fill: #0a0a0a !important; }
+/* Text on lime badges (1h response time) → black */
 .dec-label-text { color: #000000 !important; }
-/* Text on dark badges (post-launch leaf, 9 yrs sausage, hexagon) → white */
+/* Text on dark badges (4.9/5 on black star, post-launch leaf, etc) → white */
 .dec-label-text.white {
   color: rgba(255,255,255,0.92) !important;
   opacity: 1 !important;
+}
+/* Logo img: override RSC 76×31 dimensions so it displays at full size */
+img.header-logo {
+  width: 210px !important;
+  height: auto !important;
+  max-width: none !important;
 }
 /* "Post-launch support" pill: was same blue as background → deep blue glass */
 .hero-dec-leaf {

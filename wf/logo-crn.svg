@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 80">
+  <!-- F mark: two parallelogram strokes forming an italic F -->
+  <polygon points="8,2 76,2 68,28 0,28" fill="#CCFF00"/>
+  <polygon points="4,34 30,34 24,76 0,70" fill="#CCFF00"/>
+  <!-- Wordmark -->
+  <text x="88" y="60" font-family="Arial Black, Arial, Impact, sans-serif" font-weight="900" font-size="50" fill="#FFFFFF">Flux</text>
+  <text x="210" y="60" font-family="Arial Black, Arial, Impact, sans-serif" font-weight="900" font-size="50" fill="#CCFF00">Ventures</text>
+</svg>
