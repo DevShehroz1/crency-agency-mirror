@@ -109,15 +109,19 @@ html, body {
 .pen-wrapper .pen path { fill: #CCFF00 !important; }
 
 /* ── HERO DECORATION BADGES ─────────────────────────────────────────── */
-/* 4.9/5 starburst → black */
-.hero-dec-star path { fill: #0a0a0a !important; }
-/* Text on lime badges (1h response time) → black */
+/* 4.9/5 starburst → keep lime green */
+.hero-dec-star path { fill: #CCFF00 !important; }
+/* Text on all dec-label badges → black by default */
 .dec-label-text { color: #000000 !important; }
-/* Text on dark badges (4.9/5 on black star, post-launch leaf, etc) → white */
+/* Star badge text specifically → black (readable on lime) */
+.hero-dec-star-wrap .dec-label-text { color: #0a0a0a !important; }
+/* Text on dark badges (post-launch leaf, 9 yrs sausage, hexagon) → white */
 .dec-label-text.white {
   color: rgba(255,255,255,0.92) !important;
   opacity: 1 !important;
 }
+/* Star badge text overrides the .white class → stays black on lime */
+.hero-dec-star-wrap .dec-label-text.white { color: #0a0a0a !important; }
 /* Logo img: override RSC 76×31 dimensions so it displays at full size */
 img.header-logo {
   width: 210px !important;
