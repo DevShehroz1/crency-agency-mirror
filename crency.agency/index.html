@@ -348,11 +348,11 @@ li { color: rgba(255,255,255,0.88) !important; }
   justify-content: flex-start !important;
   gap: 48px !important;
 }
-/* Capitalize nav menu items */
+/* Nav items: title-case */
 .header-nav-block .nav-link .menu-roll-line p,
 .header-nav-block .nav-link p {
-  text-transform: uppercase !important;
-  letter-spacing: 0.03em !important;
+  text-transform: capitalize !important;
+  letter-spacing: 0.02em !important;
 }
 
 /* Keep section header itself transparent — glass pill floats over hero */
@@ -375,7 +375,7 @@ li { color: rgba(255,255,255,0.88) !important; }
         <div class="w-layout-blockcontainer container header w-container">
             <nav data-hero-dec="0.5" class="header-nav">
                 <ul role="list" class="header-nav-block w-list-unstyled">
-                    <li class="nav-link-block"><a href="index.html" class="nav-link w-inline-block"><span class="menu-roll"><span class="menu-roll-stack"><span class="menu-roll-line"><p class="paragraph">HOME</p></span></span></span></a></li>
+                    <li class="nav-link-block"><a href="index.html" class="nav-link w-inline-block"><span class="menu-roll"><span class="menu-roll-stack"><span class="menu-roll-line"><p class="paragraph">Home</p></span></span></span></a></li>
                     <li class="nav-link-block"><a href="https://crency.agency/about-us"
                             class="nav-link w-inline-block"><span class="menu-roll"><span class="menu-roll-stack"><span
                                         class="menu-roll-line">
@@ -2432,7 +2432,7 @@ function injectHome() {
   var li = document.createElement('li');
   li.className = 'nav-link-block';
   li.setAttribute('data-flux-home', '1');
-  li.innerHTML = '<a href="/" class="nav-link w-inline-block"><span class="menu-roll"><span class="menu-roll-stack"><span class="menu-roll-line"><p class="paragraph" style="text-transform:uppercase;letter-spacing:0.03em">HOME</p></span></span></span></a>';
+  li.innerHTML = '<a href="/" class="nav-link w-inline-block"><span class="menu-roll"><span class="menu-roll-stack"><span class="menu-roll-line"><p class="paragraph">Home</p></span></span></span></a>';
   ul.insertBefore(li, ul.firstChild);
 }
 setTimeout(injectHome, 300);
