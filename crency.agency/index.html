@@ -126,15 +126,15 @@ html, body {
 img.header-logo { display: none !important; }
 a.logo-link {
   display: block !important;
-  width: 220px !important;
-  height: 44px !important;
+  width: 300px !important;
+  height: 56px !important;
   flex-shrink: 0 !important;
 }
 a.logo-link::before {
   content: '';
   display: block;
-  width: 220px;
-  height: 44px;
+  width: 300px;
+  height: 56px;
   background: url('https://cdn.shopify.com/s/files/1/0753/3936/6623/files/ChatGPT_Image_Sep_26_2026_01_56_54_PM.png?v=1790414646') no-repeat left center / contain;
 }
 /* "Post-launch support" pill: was same blue as background → deep blue glass */
@@ -345,8 +345,14 @@ li { color: rgba(255,255,255,0.88) !important; }
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
   border-radius: 100px !important;
-  padding-left: 16rem !important;
-  padding-right: 24rem !important;
+  padding-left: 8rem !important;
+  padding-right: 12rem !important;
+}
+/* Capitalize nav menu items */
+.header-nav-block .nav-link .menu-roll-line p,
+.header-nav-block .nav-link p {
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
 }
 
 /* Keep section header itself transparent — glass pill floats over hero */
