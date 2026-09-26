@@ -122,22 +122,13 @@ html, body {
 }
 /* Star badge text overrides the .white class → stays black on lime */
 .hero-dec-star-wrap .dec-label-text.white { color: #0a0a0a !important; }
-/* Logo: fixed-width flex item so it participates in normal flex flow */
+/* Logo */
 img.header-logo { display: none !important; }
-a.logo-link {
-  flex: 0 0 240px !important;
-  width: 240px !important;
-  height: 48px !important;
-  display: flex !important;
-  align-items: center !important;
-  flex-shrink: 0 !important;
-  position: relative !important;
-}
 a.logo-link::before {
   content: '';
   display: block;
-  width: 240px;
-  height: 48px;
+  width: 220px;
+  height: 44px;
   background: url('https://cdn.shopify.com/s/files/1/0753/3936/6623/files/ChatGPT_Image_Sep_26_2026_01_56_54_PM.png?v=1790414646') no-repeat left center / contain;
 }
 /* "Post-launch support" pill: was same blue as background → deep blue glass */
@@ -348,11 +339,18 @@ li { color: rgba(255,255,255,0.88) !important; }
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
   border-radius: 100px !important;
+  flex-direction: row !important;
   justify-content: flex-start !important;
   align-items: center !important;
   gap: 32px !important;
   padding: 14px 28px !important;
   min-height: 68px !important;
+}
+a.logo-link {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
 }
 /* Nav items: title-case */
 .header-nav-block .nav-link .menu-roll-line p,
@@ -2443,6 +2441,25 @@ function injectHome() {
 }
 setTimeout(injectHome, 300);
 setTimeout(injectHome, 1200);
+
+/* Force nav layout — Webflow JS can overwrite CSS !important via element.style;
+   setProperty with 'important' wins over that */
+function fixNavLayout() {
+  var nav = document.querySelector('nav.header-nav');
+  if (!nav) return;
+  nav.style.setProperty('flex-direction', 'row', 'important');
+  nav.style.setProperty('justify-content', 'flex-start', 'important');
+  nav.style.setProperty('align-items', 'center', 'important');
+  nav.style.setProperty('gap', '32px', 'important');
+  nav.style.setProperty('padding', '14px 28px', 'important');
+  var logo = nav.querySelector('a.logo-link');
+  if (logo) {
+    logo.style.setProperty('flex', '0 0 auto', 'important');
+    logo.style.setProperty('flex-shrink', '0', 'important');
+    logo.style.setProperty('margin', '0', 'important');
+  }
+}
+[300, 600, 1000, 1500, 2000].forEach(function(t) { setTimeout(fixNavLayout, t); });
 </script>
 </body>
 <!-- Mirrored from crency.agency/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Sep 2026 10:53:16 GMT -->
