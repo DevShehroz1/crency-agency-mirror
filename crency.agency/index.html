@@ -346,15 +346,11 @@ li { color: rgba(255,255,255,0.88) !important; }
     <header data-wf--header--variant="home-page" class="section header">
         <div class="w-layout-blockcontainer container header w-container">
             <nav data-hero-dec="0.5" class="header-nav"><a href="index.html" aria-current="page"
-                    class="logo-link w-inline-block w--current"><svg width="220" height="34" viewBox="0 0 500 76" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Flux Ventures" style="display:block">
-  <!-- F-mark: upper wide parallelogram bar -->
-  <polygon points="2,4 70,4 64,26 0,26" fill="#CCFF00"/>
-  <!-- F-mark: lower narrow stem -->
-  <polygon points="0,32 27,32 23,72 0,66" fill="#CCFF00"/>
-  <!-- Flux — white -->
-  <text x="84" y="57" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="50" fill="#FFFFFF">Flux</text>
-  <!-- Ventures — neon lime -->
-  <text x="210" y="57" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="50" fill="#CCFF00">Ventures</text>
+                    class="logo-link w-inline-block w--current"><svg width="210" height="34" viewBox="0 0 500 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Flux Ventures" style="display:block">
+  <polygon points="8,2 76,2 68,28 0,28" fill="#CCFF00"/>
+  <polygon points="4,34 30,34 24,76 0,70" fill="#CCFF00"/>
+  <text x="88" y="60" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="50" fill="#FFFFFF">Flux</text>
+  <text x="210" y="60" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-size="50" fill="#CCFF00">Ventures</text>
 </svg></a>
                 <ul role="list" class="header-nav-block w-list-unstyled">
                     <li class="nav-link-block"><a href="https://crency.agency/about-us"
@@ -2412,25 +2408,25 @@ li { color: rgba(255,255,255,0.88) !important; }
 
   function buildLogoSVG() {
     var svg = document.createElementNS(NS, 'svg');
-    svg.setAttribute('width', '200'); svg.setAttribute('height', '32');
-    svg.setAttribute('viewBox', '0 0 500 76');
+    svg.setAttribute('width', '210'); svg.setAttribute('height', '34');
+    svg.setAttribute('viewBox', '0 0 500 80');
     svg.setAttribute('fill', 'none'); svg.setAttribute('style', 'display:block');
     svg.setAttribute('aria-label', 'Flux Ventures');
 
     var p1 = document.createElementNS(NS, 'polygon');
-    p1.setAttribute('points', '2,4 70,4 64,26 0,26'); p1.setAttribute('fill', '#CCFF00');
+    p1.setAttribute('points', '8,2 76,2 68,28 0,28'); p1.setAttribute('fill', '#CCFF00');
 
     var p2 = document.createElementNS(NS, 'polygon');
-    p2.setAttribute('points', '0,32 27,32 23,72 0,66'); p2.setAttribute('fill', '#CCFF00');
+    p2.setAttribute('points', '4,34 30,34 24,76 0,70'); p2.setAttribute('fill', '#CCFF00');
 
     var t1 = document.createElementNS(NS, 'text');
-    t1.setAttribute('x', '84'); t1.setAttribute('y', '57');
+    t1.setAttribute('x', '88'); t1.setAttribute('y', '60');
     t1.setAttribute('font-family', "'Arial Black',Arial,sans-serif");
     t1.setAttribute('font-weight', '900'); t1.setAttribute('font-size', '50');
     t1.setAttribute('fill', '#FFFFFF'); t1.textContent = 'Flux';
 
     var t2 = document.createElementNS(NS, 'text');
-    t2.setAttribute('x', '210'); t2.setAttribute('y', '57');
+    t2.setAttribute('x', '210'); t2.setAttribute('y', '60');
     t2.setAttribute('font-family', "'Arial Black',Arial,sans-serif");
     t2.setAttribute('font-weight', '900'); t2.setAttribute('font-size', '50');
     t2.setAttribute('fill', '#CCFF00'); t2.textContent = 'Ventures';
