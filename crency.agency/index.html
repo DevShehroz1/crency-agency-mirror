@@ -345,6 +345,8 @@ li { color: rgba(255,255,255,0.88) !important; }
   backdrop-filter: blur(24px) !important;
   -webkit-backdrop-filter: blur(24px) !important;
   border-radius: 100px !important;
+  justify-content: flex-start !important;
+  gap: 48px !important;
 }
 /* Capitalize nav menu items */
 .header-nav-block .nav-link .menu-roll-line p,
@@ -373,6 +375,7 @@ li { color: rgba(255,255,255,0.88) !important; }
         <div class="w-layout-blockcontainer container header w-container">
             <nav data-hero-dec="0.5" class="header-nav">
                 <ul role="list" class="header-nav-block w-list-unstyled">
+                    <li class="nav-link-block"><a href="index.html" class="nav-link w-inline-block"><span class="menu-roll"><span class="menu-roll-stack"><span class="menu-roll-line"><p class="paragraph">HOME</p></span></span></span></a></li>
                     <li class="nav-link-block"><a href="https://crency.agency/about-us"
                             class="nav-link w-inline-block"><span class="menu-roll"><span class="menu-roll-stack"><span
                                         class="menu-roll-line">
@@ -2421,6 +2424,20 @@ li { color: rgba(255,255,255,0.88) !important; }
     <script>self.__next_f.push([1, "81:I[622,[],\"IconMark\"]\n"])</script>
     <script>self.__next_f.push([1, "67:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Crency: Design \u0026 Web Development That Sells\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Websites people believe in — and buy from. Crency is a design and development agency: strategy, Webflow build and launch in three weeks. See the work.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"canonical\",\"href\":\"https://crency.agency\"}],[\"$\",\"meta\",\"3\",{\"property\":\"og:title\",\"content\":\"Crency: Design \u0026 Web Development That Sells\"}],[\"$\",\"meta\",\"4\",{\"property\":\"og:description\",\"content\":\"Websites people believe in — and buy from. Crency is a design and development agency: strategy, Webflow build and launch in three weeks. See the work.\"}],[\"$\",\"meta\",\"5\",{\"property\":\"og:url\",\"content\":\"https://crency.agency\"}],[\"$\",\"meta\",\"6\",{\"property\":\"og:site_name\",\"content\":\"Crency\"}],[\"$\",\"meta\",\"7\",{\"property\":\"og:locale\",\"content\":\"en_US\"}],[\"$\",\"meta\",\"8\",{\"property\":\"og:image:type\",\"content\":\"image/png\"}],[\"$\",\"meta\",\"9\",{\"property\":\"og:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"10\",{\"property\":\"og:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"11\",{\"property\":\"og:image\",\"content\":\"https://crency.agency/opengraph-image.png?d06f51a44cb02a11\"}],[\"$\",\"meta\",\"12\",{\"property\":\"og:type\",\"content\":\"website\"}],[\"$\",\"meta\",\"13\",{\"name\":\"twitter:card\",\"content\":\"summary_large_image\"}],[\"$\",\"meta\",\"14\",{\"name\":\"twitter:title\",\"content\":\"Crency: Design \u0026 Web Development That Sells\"}],[\"$\",\"meta\",\"15\",{\"name\":\"twitter:description\",\"content\":\"Websites people believe in — and buy from. Crency is a design and development agency: strategy, Webflow build and launch in three weeks. See the work.\"}],[\"$\",\"meta\",\"16\",{\"name\":\"twitter:image:type\",\"content\":\"image/png\"}],[\"$\",\"meta\",\"17\",{\"name\":\"twitter:image:width\",\"content\":\"1200\"}],[\"$\",\"meta\",\"18\",{\"name\":\"twitter:image:height\",\"content\":\"630\"}],[\"$\",\"meta\",\"19\",{\"name\":\"twitter:image\",\"content\":\"https://crency.agency/twitter-image.png?d06f51a44cb02a11\"}],[\"$\",\"link\",\"20\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}],[\"$\",\"link\",\"21\",{\"rel\":\"icon\",\"href\":\"/icon-192.png\",\"type\":\"image/png\",\"sizes\":\"192x192\"}],[\"$\",\"link\",\"22\",{\"rel\":\"apple-touch-icon\",\"href\":\"/icon-192.png\",\"sizes\":\"192x192\"}],[\"$\",\"$L81\",\"23\",{}]],\"error\":null,\"digest\":\"$undefined\"}\n"])</script>
     <script>self.__next_f.push([1, "2d:\"$67:metadata\"\n"])</script>
+<script>
+/* Inject Home link after React hydration */
+function injectHome() {
+  var ul = document.querySelector('.header-nav-block');
+  if (!ul || ul.querySelector('[data-flux-home]')) return;
+  var li = document.createElement('li');
+  li.className = 'nav-link-block';
+  li.setAttribute('data-flux-home', '1');
+  li.innerHTML = '<a href="/" class="nav-link w-inline-block"><span class="menu-roll"><span class="menu-roll-stack"><span class="menu-roll-line"><p class="paragraph" style="text-transform:uppercase;letter-spacing:0.03em">HOME</p></span></span></span></a>';
+  ul.insertBefore(li, ul.firstChild);
+}
+setTimeout(injectHome, 300);
+setTimeout(injectHome, 1200);
+</script>
 </body>
 <!-- Mirrored from crency.agency/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Sep 2026 10:53:16 GMT -->
 
